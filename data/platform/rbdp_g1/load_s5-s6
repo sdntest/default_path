@@ -1,0 +1,6 @@
+Sampling s5-eth6 (30 seconds average)...                                        81171 packets sampled in 30 seconds
+Traffic average for s5-eth6
+
+      rx        31.96 Mbit/s          2705 packets/s
+      tx         0.00 kbit/s             0 packets/s
+

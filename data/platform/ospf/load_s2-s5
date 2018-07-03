@@ -1,0 +1,6 @@
+Sampling s2-eth3 (30 seconds average)...                                        398228 packets sampled in 30 seconds
+Traffic average for s2-eth3
+
+      rx        78.39 Mbit/s          6636 packets/s
+      tx        78.41 Mbit/s          6637 packets/s
+

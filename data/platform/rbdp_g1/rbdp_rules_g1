@@ -1,0 +1,45 @@
+#h1-h2
+ovs-ofctl -O OpenFlow13 add-group tcp:127.0.0.1:6635 group_id=0,type=select,bucket=weight:100,output=3,bucket=weight:0,output=2
+ovs-ofctl -O OpenFlow13 add-flow tcp:127.0.0.1:6635 ip,nw_dst=10.0.0.2,actions=group=0
+ovs-ofctl -O OpenFlow13 add-flow tcp:127.0.0.1:6640 ip,nw_dst=10.0.0.2,actions=output=2
+ovs-ofctl -O OpenFlow13 add-flow tcp:127.0.0.1:6639 ip,nw_dst=10.0.0.2,actions=output=1
+
+#h1-h3
+ovs-ofctl -O OpenFlow13 add-flow tcp:127.0.0.1:6635 ip,nw_dst=10.0.0.3,actions=output=2
+ovs-ofctl -O OpenFlow13 add-flow tcp:127.0.0.1:6636 ip,nw_dst=10.0.0.3,actions=output=3
+ovs-ofctl -O OpenFlow13 add-flow tcp:127.0.0.1:6639 ip,nw_dst=10.0.0.3,actions=output=2
+
+#h1-h4
+ovs-ofctl -O OpenFlow13 add-flow tcp:127.0.0.1:6635 ip,nw_dst=10.0.0.4,actions=output=2
+ovs-ofctl -O OpenFlow13 add-flow tcp:127.0.0.1:6636 ip,nw_dst=10.0.0.4,actions=output=3
+ovs-ofctl -O OpenFlow13 add-flow tcp:127.0.0.1:6639 ip,nw_dst=10.0.0.4,actions=output=3
+
+#h1-h5
+ovs-ofctl -O OpenFlow13 add-flow tcp:127.0.0.1:6635 ip,nw_dst=10.0.0.5,actions=output=2
+ovs-ofctl -O OpenFlow13 add-flow tcp:127.0.0.1:6636 ip,nw_dst=10.0.0.5,actions=output=2
+ovs-ofctl -O OpenFlow13 add-flow tcp:127.0.0.1:6637 ip,nw_dst=10.0.0.5,actions=output=1
+
+#h1-h6
+ovs-ofctl -O OpenFlow13 add-flow tcp:127.0.0.1:6635 ip,nw_dst=10.0.0.6,actions=output=2
+ovs-ofctl -O OpenFlow13 add-flow tcp:127.0.0.1:6636 ip,nw_dst=10.0.0.6,actions=output=2
+ovs-ofctl -O OpenFlow13 add-flow tcp:127.0.0.1:6637 ip,nw_dst=10.0.0.6,actions=output=2
+
+
+#h3-h5
+ovs-ofctl -O OpenFlow13 add-group tcp:127.0.0.1:6639 group_id=0,type=select,bucket=weight:100,output=5,bucket=weight:0,output=4
+ovs-ofctl -O OpenFlow13 add-flow tcp:127.0.0.1:6639 ip,nw_dst=10.0.0.5,actions=group=0
+ovs-ofctl -O OpenFlow13 add-flow tcp:127.0.0.1:6638 ip,nw_dst=10.0.0.5,actions=output=1
+ovs-ofctl -O OpenFlow13 add-flow tcp:127.0.0.1:6637 ip,nw_dst=10.0.0.5,actions=output=1
+
+#h3-h6
+ovs-ofctl -O OpenFlow13 add-flow tcp:127.0.0.1:6639 ip,nw_dst=10.0.0.6,actions=output=4
+ovs-ofctl -O OpenFlow13 add-flow tcp:127.0.0.1:6636 ip,nw_dst=10.0.0.6,actions=output=2
+ovs-ofctl -O OpenFlow13 add-flow tcp:127.0.0.1:6637 ip,nw_dst=10.0.0.6,actions=output=2
+
+#h5-h1
+ovs-ofctl -O OpenFlow13 add-group tcp:127.0.0.1:6637 group_id=0,type=select,bucket=weight:100,output=5,bucket=weight:0,output=3
+ovs-ofctl -O OpenFlow13 add-flow tcp:127.0.0.1:6637 ip,nw_dst=10.0.0.1,actions=group=0
+ovs-ofctl -O OpenFlow13 add-flow tcp:127.0.0.1:6641 ip,nw_dst=10.0.0.1,actions=output=1
+ovs-ofctl -O OpenFlow13 add-flow tcp:127.0.0.1:6635 ip,nw_dst=10.0.0.1,actions=output=1
+
+

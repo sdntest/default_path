@@ -1,0 +1,6 @@
+Sampling s4-eth2 (30 seconds average)...                                        165307 packets sampled in 30 seconds
+Traffic average for s4-eth2
+
+      rx        65.09 Mbit/s          5510 packets/s
+      tx         0.00 kbit/s             0 packets/s
+

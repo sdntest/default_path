@@ -1,0 +1,12 @@
+#h1-h2
+ovs-ofctl -O OpenFlow13 add-group tcp:127.0.0.1:6635 group_id=0,type=select,bucket=weight:100,output=3,bucket=weight:0,output=2
+#ovs-ofctl -O OpenFlow13 add-flow tcp:127.0.0.1:6635 ip,nw_dst=10.0.0.2,actions=output=group=0
+ ovs-ofctl -O OpenFlow13 add-flow tcp:127.0.0.1:6635 ip,nw_src=10.0.0.2,nw_dst=10.0.0.5,actions=group=0
+
+
+
+
+
+
+
+
